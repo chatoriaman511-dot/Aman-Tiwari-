@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MineConnect - The B2B Operating Layer for Mining</title>
+    <!-- Tailwind CSS Script -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://googleapis.com" rel="stylesheet">
+    <style>
+        body { 
+            background-color: #0b0c10; 
+            color: #c5c6c7; 
+            font-family: 'Inter', sans-serif; 
+        }
+        .font-mono-custom {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .text-gradient { 
+            background: linear-gradient(180deg, #ffffff 0%, #a3a3a3 100%); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee-custom {
+            display: inline-block;
+            animation: marquee 25s linear infinite;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- 1. Real-time Commodity Pricing Ticker -->
+    <div class="bg-zinc-950 border-b border-zinc-900 text-[11px] py-2.5 px-4 overflow-hidden whitespace-nowrap text-zinc-400 font-mono-custom tracking-wider">
+        <div class="animate-marquee-custom whitespace-nowrap">
+            <span class="mx-6 text-zinc-500 uppercase">COAL G-9 <span class="text-red-500 ml-1 font-bold">₹2,250 -0.6%</span></span>
+            <span class="mx-6 text-zinc-500 uppercase">BAUXITE <span class="text-green-500 ml-1 font-bold">₹3,100 +0.9%</span></span>
+            <span class="mx-6 text-zinc-500 uppercase">MANGANESE Mn44 <span class="text-green-500 ml-1 font-bold">₹14,500 +2.1%</span></span>
+            <span class="mx-6 text-zinc-500 uppercase">CHROMITE <span class="text-red-500 ml-1 font-bold">₹17,800 -1.2%</span></span>
+            <span class="mx-6 text-zinc-500 uppercase">LIMESTONE <span class="text-green-500 ml-1 font-bold">₹950 +0.3%</span></span>
+            <span class="mx-6 text-zinc-500 uppercase">IRON ORE Fe62 <span class="text-green-500 ml-1 font-bold">₹4,850 +1.4%</span></span>
+            <!-- Duplicate for infinite scrolling effect -->
+            <span class="mx-6 text-zinc-500 uppercase">COAL G-9 <span class="text-red-500 ml-1 font-bold">₹2,250 -0.6%</span></span>
+            <span class="mx-6 text-zinc-500 uppercase">BAUXITE <span class="text-green-500 ml-1 font-bold">₹3,100 +0.9%</span></span>
+            <span class="mx-6 text-zinc-500 uppercase">MANGANESE Mn44 <span class="text-green-500 ml-1 font-bold">₹14,500 +2.1%</span></span>
+        </div>
+    </div>
+
+    <!-- 2. Header / Navigation -->
+    <header class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center border-b border-zinc-900/50">
+        <div class="text-orange-500 font-black tracking-widest text-xl font-mono-custom">MINECONNECT</div>
+        <nav class="hidden md:flex space-x-10 text-xs font-bold tracking-widest text-zinc-400 uppercase font-mono-custom">
+            <a href="#" class="hover:text-white transition">Modules</a>
+            <a href="#" class="hover:text-white transition">Trust</a>
+            <a href="#" class="hover:text-white transition">Network</a>
+        </nav>
+        <div class="flex items-center space-x-6">
+            <span class="text-xs font-bold text-zinc-500 font-mono-custom uppercase flex items-center cursor-pointer hover:text-zinc-300">
+                <span class="mr-1.5 text-sm">🌐</span> EN
+            </span>
+            <a href="#" class="text-xs font-bold text-zinc-400 hover:text-white transition font-mono-custom uppercase">Sign In</a>
+            <a href="#" class="bg-orange-600 text-black text-xs font-black px-5 py-2.5 uppercase tracking-wider rounded-none hover:bg-orange-500 transition font-mono-custom">
+                Join Network ↗️
+            </a>
+        </div>
+    </header>
+
+    <!-- 3. Hero & Content Section -->
+    <main class="max-w-7xl mx-auto px-6 py-16 md:py-24 grid md:grid-cols-12 gap-16 items-center">
+        <!-- Left Hero Text block -->
+        <div class="md:col-span-7 space-y-8">
+            <div class="flex flex-wrap gap-2 text-[11px] font-mono-custom tracking-widest text-zinc-500 uppercase">
+                <span>— INDIA</span><span>•</span><span>ODISHA</span><span>•</span><span>JHARKHAND</span><span>•</span><span>CHHATTISGARH</span>
+            </div>
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-black tracking-tighter leading-none text-white uppercase">
+                The B2B <br><span class="text-gradient">Operating Layer</span> <br>For Mining.
+            </h1>
+            <p class="text-zinc-400 text-sm md:text-base max-w-xl leading-relaxed font-light">
+                One platform connecting miners, buyers, logistics fleets, DGMS-certified engineers, and machinery workshops — with verified credentials, a live demand-supply board, and a real-time mineral pricing index for India's core commodities.
+            </p>
+            <div class="pt-4 flex flex-wrap gap-4 font-mono-custom">
+                <a href="#" class="bg-orange-600 text-black text-xs font-black px-7 py-4 uppercase tracking-wider hover:bg-orange-500 transition">
+                    Register your company ↗️
+                </a>
+                <a href="#" class="border border-zinc-800 bg-zinc-950/40 text-zinc-300 text-xs font-bold px-7 py-4 uppercase tracking-wider hover:bg-zinc-900 transition">
+                    Sign in to dashboard
+                </a>
+            </div>
+        </div>
+
+        <!-- Right Metric Sidebar Block -->
+        <div class="md:col-span-5 border border-zinc-900 bg-zinc-950/40 p-8 space-y-8 font-mono-custom backdrop-blur-sm">
+            <div>
+                <div class="text-zinc-600 text-[10px] tracking-widest uppercase mb-1.5">// NETWORK SNAPSHOT</div>
+                <div class="text-4xl font-black text-white">6</div>
+                <div class="text-zinc-500 text-xs uppercase tracking-wide mt-1">Core Modules Active</div>
+            </div>
+            <hr class="border-zinc-900">
+            <div>
+                <div class="text-4xl font-black text-white">3</div>
+                <div class="text-zinc-500 text-xs uppercase tracking-wide mt-1">Key Mining States</div>
+            </div>
+            <hr class="border-zinc-900">
+            <div>
+                <div class="text-2xl font-black text-orange-500 tracking-tight">DGMS • IBM</div>
+                <div class="text-zinc-500 text-xs uppercase tracking-wide mt-1">Verified Credentials Architecture</div>
+            </div>
+            <hr class="border-zinc-900">
+            <div>
+                <div class="text-3xl font-black text-white">₹14,500</div>
+                <div class="text-zinc-500 text-xs uppercase tracking-wide mt-1">MN 44% / TON Index Base</div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 4. Sub-Platform Footer Informational Track -->
+    <section class="border-t border-zinc-900 bg-zinc-950/60 py-12 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+            <div class="text-zinc-600 text-xs font-mono-custom uppercase tracking-widest min-w-[200px]">
+                // 01 — PLATFORM STRUCTURING
+            </div>
+            <div class="text-zinc-400 text-xs md:text-sm max-w-3xl font-sans font-light leading-relaxed">
+                Mining operations across India remain highly fragmented across independent producers, commodity traders, raw transporters, specialized engineering consultants, and statutory regulators. MineConnect synthesizes these elements into a single, cohesive business architecture layer.
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
